@@ -1,0 +1,93 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://raw.githubusercontent.com/sifis-home/json-schema/master/api-label.jschema",
+  "title": "SIFIS-Home API label schema.",
+  "description": "JSON schema defining the API behavior label and the API security label structures for the SIFIS-Home framework in the context of the SIFIS-Home developer APIs.",
+  "type": "object",
+  "properties": {
+    "api_name": {
+      "type": "string"
+    },
+    "api_description": {
+      "type": "string"
+    },
+    "behavior_label": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/functionality"
+      }
+    },
+    "security_label": {
+      "type": "object",
+      "properties": {
+        "safety": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/hazard"
+          }
+        },
+        "privacy": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/hazard"
+          }
+        },
+        "financial": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/hazard"
+          }
+        }
+      },
+      "required": [
+        "safety",
+        "privacy",
+        "financial"
+      ]
+    }
+  },
+  "required": [
+    "api_name",
+    "api_description",
+    "behavior_label",
+    "security_label"
+  ],
+  "definitions": {
+    "hazard": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "risk_score": {
+          "type": "number",
+          "minimum": 1,
+          "maximum": 10,
+          "multipleOf": 1
+        }
+      },
+      "required": [
+        "name",
+        "description"
+      ]
+    },
+    "functionality": {
+      "type": "object",
+      "properties": {
+        "device_type": {
+          "type": "string"
+        },
+        "action": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "device_type",
+        "action"
+      ]
+    }
+  }
+}
