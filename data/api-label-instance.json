@@ -1,0 +1,36 @@
+{
+  "api_name": "turn_oven_on",
+  "api_description": "Activates the oven at the last selected temperature.",
+  "behavior_label": [
+    {
+      "device_type": "oven",
+      "action": "turn_on"
+    }
+  ],
+  "security_label": {
+    "safety": [
+      {
+        "name": "FireHazard",
+        "description": "The execution may cause fire."
+      },
+      {
+        "name": "PowerOutage",
+        "description": "High instantaneous power. The execution may cause power outage.",
+        "risk_score": 8
+      }
+    ],
+    "privacy": [
+      {
+        "name": "LogEnergyConsumption",
+        "description": "The execution allows the app to register information about energy consumption."
+      }
+    ],
+    "financial": [
+      {
+        "name": "ElectricEnergyConsumption",
+        "description": "The execution enables the device to consume further electricity.",
+        "risk_score": 8
+      }
+    ]
+  }
+}
