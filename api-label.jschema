@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://raw.githubusercontent.com/sifis-home/json-schema/master/api-label.jschema",
+  "$id": "https://raw.githubusercontent.com/sifis-home/json-schemas/master/api-label.jschema",
   "title": "SIFIS-Home API label schema.",
   "description": "JSON schema defining the API behavior label and the API security label structures for the SIFIS-Home framework in the context of the SIFIS-Home developer APIs.",
   "type": "object",

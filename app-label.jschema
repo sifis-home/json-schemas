@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://raw.githubusercontent.com/sifis-home/json-schema/master/app-label.jschema",
+  "$id": "https://raw.githubusercontent.com/sifis-home/json-schemas/master/app-label.jschema",
   "title": "SIFIS-Home app label schema.",
   "description": "JSON schema defining the app label structure within the SIFIS-Home framework.",
   "type": "object",
@@ -14,7 +14,7 @@
     "api_labels": {
       "type": "array",
       "items": {
-        "$ref": "/sifis-home/json-schema/master/api-label.jschema"
+        "$ref": "/sifis-home/json-schemas/master/api-label.jschema"
       }
     }
   },
