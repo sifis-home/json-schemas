@@ -1,9 +1,9 @@
 # json-schemas
 A collection of json schemas defined within SIFIS-Home
 
-The data folder contains an json instance of the defined json schemas.
+The `data` folder contains an json instance of the defined json schemas.
 
-Schemas can be validated by using the tool [check-jsonschema](https://check-jsonschema.readthedocs.io/en/latest/).
+Schemas can be validated by using the tool [`check-jsonschema`](https://check-jsonschema.readthedocs.io/en/latest/).
 This validation will be included in the CI.
 
 ## API Label Schema
