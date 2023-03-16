@@ -14,4 +14,5 @@ This validation will be included in the CI.
 < Description goes here >
 
 Meanwhile, you can find the description of the API Label and App Label schemas in deliverable D2.4.
-The API label and the app label schemas were previously hosted at the [wp2-documents](https://github.com/sifis-home/wp2-documents/tree/master/wp2-deliverable-2.2/schemas) repository.
+
+NOTE: The API label and the app label schemas were previously hosted at the [wp2-documents](https://github.com/sifis-home/wp2-documents/tree/master/wp2-deliverable-2.2/schemas) repository.
