@@ -5,25 +5,24 @@ run-name: ${{ github.actor }} is validating the JSON schemas
 on: [push]
 
 jobs:
-
-  check-jsonschema:
-
-    runs-on: ubuntu-latest
-
-    steps:
-
-      - uses: actions/checkout@v3
-
-      - name: Install Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: '3.10'
-
+  check-jsonschema:
+  
+    runs-on: ubuntu-latest
+    
+    steps:
+    
+      - uses: actions/checkout@v3
+      
+      - name: Install Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+          
       - name: Install check-jsonschema tool
-        run: pip install check-jsonschema
-
-      - name: Validate API Label schema
-        run: check-jsonschema -v --schemafile api-label.jschema ./data/api-label-instance.json
-
-      - name: Validate App Label schema
-        run: check-jsonschema -v --schemafile app-label.jschema ./data/app-label-instance.json
+        run: pip install check-jsonschema
+        
+      - name: Validate API Label schema
+        run: check-jsonschema -v --schemafile api-label.jschema ./data/api-label-instance.json
+        
+      - name: Validate App Label schema
+        run: check-jsonschema -v --schemafile app-label.jschema ./data/app-label-instance.json
