@@ -1,0 +1,12 @@
+name: schemas-validation-workflow
+run-name: ${{ github.actor }} is validating the JSON schemas
+on: [push]
+jobs:
+  validate-API-label-schema:
+    runs-on: ubuntu/latest
+    steps:
+      - uses: actions/checkout@v3
+      - run: echo $PWD
+      - run: Python --version
+      - run: pip install check-jsonschema
+      - run: check-jsonschema -v --schemafile api-label.jschema ./data/api-label-instance.json
