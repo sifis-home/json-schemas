@@ -11,3 +11,4 @@ jobs:
           python-version: '3.10'
       - run: pip install check-jsonschema
       - run: check-jsonschema -v --schemafile api-label.jschema ./data/api-label-instance.json
+      - run: check-jsonschema -v --schemafile app-label.jschema ./data/api-label-instance.json
