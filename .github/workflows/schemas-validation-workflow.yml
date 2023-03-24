@@ -6,9 +6,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - uses: actions/setup-python@v4
+      - name: Install Python
+        uses: actions/setup-python@v4
         with:
           python-version: '3.10'
+          
       - name: Install check-jsonschema tool
         run: pip install check-jsonschema
         
