@@ -1,0 +1,38 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "SIFIS-Home schema for RISE WP3 solutions: Commands to Client(s)",
+  "description": "Sending a command to trigger the targeted Client to send a request to its associated Server(s)",
+  "type": "object",
+  "properties": {
+    "Volatile": {
+      "type": "object",
+      "properties": {
+        "value": {
+          "type": "object",
+          "properties": {
+            "message": {
+              "type": "string",
+              "description": "The command to send to this Client device which it will in turn send to the Server(s)",
+              "enum": ["on", "off", "lock", "unlock", "0", "1"]
+            },
+            "topic": {
+              "type": "string",
+              "description": "Controls which device to target: Group OSCORE Client 1/2, or the EDHOC Client",
+              "enum": ["command_dev1", "command_dev2", "command_ed"]
+            }
+          },
+          "required": [
+            "message",
+            "topic"
+          ]
+        }
+      },
+      "required": [
+        "value"
+      ]
+    }
+  },
+  "required": [
+    "Volatile"
+  ]
+}

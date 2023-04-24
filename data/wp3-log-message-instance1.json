@@ -1,0 +1,15 @@
+{
+   "Persistent":{
+      "value":{
+         "logs":{
+            "message":"Returning token. [ctiStr: cnMyMA==. rsName: rs2. audStr: rs2. id: Server1]",
+            "priority":1,
+            "severity":0,
+            "category":"ACE Authorization Server"
+         }
+      },
+      "topic_name":"SIFIS:Logs",
+      "topic_uuid":"Logs",
+      "deleted":false
+   }
+}

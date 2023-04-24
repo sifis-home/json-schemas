@@ -1,0 +1,8 @@
+{
+   "Volatile":{
+      "value":{
+         "message":"Response #0: [CoAP Response. MID: 64822. Token: 9657855EFB80F1B4. Type: NON. Status: 2.05 - CONTENT. Options: {\"Object-Security\":0x2841, \"Content-Format\":\"text/plain\"}: RTT: 123 ms. Payload: 26 Bytes. Payload: ON. ID: 234. Enabled: true]Response #1: [CoAP Response. MID: 55760. Token: 9657855EFB80F1B4. Type: NON. Status: 2.05 - CONTENT. Options: {\"Object-Security\":0x28FE, \"Content-Format\":\"text/plain\"}: RTT: 131 ms. Payload: 26 Bytes. Payload: ON. ID: 560. Enabled: true]Response #2: [CoAP Response. MID: 64969. Token: 9657855EFB80F1B4. Type: NON. Status: 2.05 - CONTENT. Options: {\"Object-Security\":0x2800, \"Content-Format\":\"text/plain\"}: RTT: 215 ms. Payload: 25 Bytes. Payload: ON. ID: 71. Enabled: true]",
+         "topic":"output_dev2"
+      }
+   }
+}

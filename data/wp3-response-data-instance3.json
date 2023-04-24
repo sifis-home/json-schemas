@@ -1,0 +1,8 @@
+{
+   "Volatile":{
+      "value":{
+         "message":"Response #0: [CoAP Response. MID: 7375. Token: 4887AE041DF6AF17. Type: ACK. Status: 2.04 - CHANGED. Options: {\"Object-Security\":0x, \"Content-Format\":\"text/plain\"}: RTT: 67 ms. Payload: 17 Bytes. Payload: Turning on light ]",
+         "topic":"output_ed"
+      }
+   }
+}

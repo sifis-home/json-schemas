@@ -1,0 +1,37 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "SIFIS-Home schema for RISE WP3 solutions: Responses relayed back from Client(s)",
+  "description": "A Client relaying back responses from its associated Server(s)",
+  "type": "object",
+  "properties": {
+    "Volatile": {
+      "type": "object",
+      "properties": {
+        "value": {
+          "type": "object",
+          "properties": {
+            "message": {
+              "type": "string",
+              "description": "Response information from the Server(s), as relayed to the DHT by the Client"
+            },
+            "topic": {
+              "type": "string",
+              "description": "Indicates which device is relaying back responses: Group OSCORE Client 1/2, or the EDHOC Client",
+              "enum": ["output_dev1", "output_dev2", "output_ed"]
+            }
+          },
+          "required": [
+            "message",
+            "topic"
+          ]
+        }
+      },
+      "required": [
+        "value"
+      ]
+    }
+  },
+  "required": [
+    "Volatile"
+  ]
+}

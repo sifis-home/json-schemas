@@ -1,0 +1,8 @@
+{
+   "Volatile":{
+      "value":{
+         "message":"on",
+         "topic":"command_dev1"
+      }
+   }
+}
