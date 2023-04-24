@@ -1,0 +1,15 @@
+{
+   "Persistent":{
+      "value":{
+         "logs":{
+            "message":"Successfully processed Join Request [subject: AA==:AQ==, groupName: aaaaaa570000, nodeName: aaaaaa57f05c-00]",
+            "priority":1,
+            "severity":0,
+            "category":"ACE Group Manager"
+         }
+      },
+      "topic_name":"SIFIS:Logs",
+      "topic_uuid":"Logs",
+      "deleted":false
+   }
+}

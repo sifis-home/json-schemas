@@ -1,0 +1,65 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "SIFIS-Home schema for RISE WP3 solutions: Log messages",
+  "description": "Format for log message from ACE Authorization Server and ACE Group Manager",
+  "type": "object",
+  "properties": {
+    "Persistent": {
+      "type": "object",
+      "properties": {
+        "value": {
+          "type": "object",
+          "properties": {
+            "logs": {
+              "type": "object",
+              "properties": {
+                "message": {
+                  "type": "string",
+                  "description": "The actual content of the log message"
+                },
+                "priority": {
+                  "type": "integer"
+                },
+                "severity": {
+                  "type": "integer"
+                },
+                "category": {
+                  "type": "string",
+                  "description": "Which device produced this log message",
+                  "enum": ["ACE Authorization Server", "ACE Group Manager"]
+                }
+              },
+              "required": [
+                "message",
+                "priority",
+                "severity",
+                "category"
+              ]
+            }
+          },
+          "required": [
+            "logs"
+          ]
+        },
+        "topic_name": {
+          "type": "string"
+        },
+        "topic_uuid": {
+          "type": "string"
+        },
+        "deleted": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "value",
+        "topic_name",
+        "topic_uuid",
+        "deleted"
+      ]
+    }
+  },
+  "required": [
+    "Persistent"
+  ]
+}

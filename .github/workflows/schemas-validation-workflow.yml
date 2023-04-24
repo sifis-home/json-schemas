@@ -32,3 +32,13 @@ jobs:
         
       - name: Validate App Label schema
         run: check-jsonschema -v --schemafile app-label.jschema ./data/app-label-instance.json
+
+      - name: Validate WP3 Commands schema
+        run: check-jsonschema -v --schemafile wp3-commands.jschema ./data/wp3-commands-instance1.json ./data/wp3-commands-instance2.json ./data/wp3-commands-instance3.json
+
+      - name: Validate WP3 Log Message schema
+        run: check-jsonschema -v --schemafile wp3-log-message.jschema ./data/wp3-log-message-instance1.json ./data/wp3-log-message-instance2.json
+
+      - name: Validate WP3 Response Data schema
+        run: check-jsonschema -v --schemafile wp3-response-data.jschema ./data/wp3-response-data-instance1.json ./data/wp3-response-data-instance2.json ./data/wp3-response-data-instance3.json
+
