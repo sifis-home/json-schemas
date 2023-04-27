@@ -2,10 +2,10 @@
    "Persistent":{
       "value":{
          "logs":{
-            "message":"Returning token. [ctiStr: cnMyMA==. rsName: rs2. audStr: rs2. id: Server1]",
-            "priority":1,
-            "severity":0,
-            "category":"ACE Authorization Server"
+            "type":"info",
+            "priority":"low",
+            "category":"status",
+            "message":"ACE Authorization Server: Returning token. [ctiStr: cnMyMA==. rsName: rs2. audStr: rs2. id: Client2]"
          }
       },
       "topic_name":"SIFIS:Logs",
@@ -13,3 +13,4 @@
       "deleted":false
    }
 }
+

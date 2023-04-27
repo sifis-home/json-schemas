@@ -18,21 +18,22 @@
                   "description": "The actual content of the log message"
                 },
                 "priority": {
-                  "type": "integer"
+                  "type": "string",
+                  "enum": ["low", "medium", "high", "severe"]
                 },
-                "severity": {
-                  "type": "integer"
+                "type": {
+                  "type": "string",
+                  "enum": ["info", "warning", "error"]
                 },
                 "category": {
                   "type": "string",
-                  "description": "Which device produced this log message",
-                  "enum": ["ACE Authorization Server", "ACE Group Manager"]
+                  "enum": ["status", "update", "access", "command", "uplink", "rule", "analytics"]
                 }
               },
               "required": [
                 "message",
                 "priority",
-                "severity",
+                "type",
                 "category"
               ]
             }
@@ -63,3 +64,4 @@
     "Persistent"
   ]
 }
+

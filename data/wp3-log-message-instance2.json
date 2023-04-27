@@ -2,10 +2,10 @@
    "Persistent":{
       "value":{
          "logs":{
-            "message":"Successfully processed Join Request [subject: AA==:AQ==, groupName: aaaaaa570000, nodeName: aaaaaa57f05c-00]",
-            "priority":1,
-            "severity":0,
-            "category":"ACE Group Manager"
+            "type":"info",
+            "priority":"low",
+            "category":"status",
+            "message":"ACE Group Manager: Successfully processed Join Request [subject: AA==:AQ==, groupName: bbbbbb570000, nodeName: bbbbbb57f03a-22]"
          }
       },
       "topic_name":"SIFIS:Logs",
@@ -13,3 +13,4 @@
       "deleted":false
    }
 }
+
