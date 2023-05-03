@@ -17,7 +17,7 @@
             },
             "topic": {
               "type": "string",
-              "description": "Controls which device to target: Group OSCORE Client 1/2, or the EDHOC Client",
+              "description": "Controls which device to target: Group OSCORE Client 1/2, the EDHOC Client, or the CoAP Client",
               "enum": ["command_dev1", "command_dev2", "command_ed", "command_co"]
             }
           },
