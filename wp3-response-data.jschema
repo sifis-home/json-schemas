@@ -17,7 +17,7 @@
             "topic": {
               "type": "string",
               "description": "Indicates which device is relaying back responses: Group OSCORE Client 1/2, or the EDHOC Client",
-              "enum": ["output_dev1", "output_dev2", "output_ed"]
+              "enum": ["output_dev1", "output_dev2", "output_ed", "output_co"]
             }
           },
           "required": [
