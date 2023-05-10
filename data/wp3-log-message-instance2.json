@@ -1,15 +1,15 @@
 {
    "Persistent":{
       "value":{
-         "logs":{
+         "log":{
             "type":"info",
             "priority":"low",
             "category":"status",
             "message":"ACE Group Manager: Successfully processed Join Request [subject: AA==:AQ==, groupName: bbbbbb570000, nodeName: bbbbbb57f03a-22]"
          }
       },
-      "topic_name":"SIFIS:Logs",
-      "topic_uuid":"Logs",
+      "topic_name":"SIFIS:Log",
+      "topic_uuid":"Log",
       "deleted":false
    }
 }

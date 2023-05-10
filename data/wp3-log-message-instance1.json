@@ -1,15 +1,15 @@
 {
    "Persistent":{
       "value":{
-         "logs":{
+         "log":{
             "type":"info",
             "priority":"low",
             "category":"status",
             "message":"ACE Authorization Server: Returning token. [ctiStr: cnMyMA==. rsName: rs2. audStr: rs2. id: Client2]"
          }
       },
-      "topic_name":"SIFIS:Logs",
-      "topic_uuid":"Logs",
+      "topic_name":"SIFIS:Log",
+      "topic_uuid":"Log",
       "deleted":false
    }
 }
