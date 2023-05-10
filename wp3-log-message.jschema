@@ -10,7 +10,7 @@
         "value": {
           "type": "object",
           "properties": {
-            "logs": {
+            "log": {
               "type": "object",
               "properties": {
                 "message": {
@@ -39,7 +39,7 @@
             }
           },
           "required": [
-            "logs"
+            "log"
           ]
         },
         "topic_name": {
