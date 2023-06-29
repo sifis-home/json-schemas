@@ -1,0 +1,132 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Netspot Alarm",
+  "type": "object",
+  "required": [
+    "RequestPostTopicUuid"
+  ],
+  "properties": {
+    "RequestPostTopicUuid": {
+      "$ref": "#/definitions/RequestPostTopicUUID"
+    }
+  },
+  "definitions": {
+    "RequestPostTopicUUID": {
+      "type": "object",
+      "required": [
+        "topic_name",
+        "topic_uuid",
+        "value"
+      ],
+      "properties": {
+        "topic_name": {
+          "type": "string"
+        },
+        "topic_uuid": {
+          "type": "string"
+        },
+        "value": {
+          "$ref": "#/definitions/Value"
+        }
+      }
+    },
+    "Value": {
+      "type": "object",
+      "required": [
+        "addresses",
+        "alarm",
+        "description"
+      ],
+      "properties": {
+        "description": {
+          "type": "string"
+        },
+        "addresses": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "alarm": {
+          "$ref": "#/definitions/AlarmMessage"
+        }
+      }
+    },
+    "AlarmMessage": {
+      "type": "object",
+      "required": [
+        "code",
+        "name",
+        "probability",
+        "series",
+        "stat",
+        "status",
+        "time",
+        "type",
+        "value"
+      ],
+      "properties": {
+        "time": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "name": {
+          "type": "string"
+        },
+        "series": {
+          "type": "string"
+        },
+        "stat": {
+          "$ref": "#/definitions/Stat"
+        },
+        "status": {
+          "$ref": "#/definitions/AlertStatus"
+        },
+        "value": {
+          "type": "number",
+          "format": "double"
+        },
+        "probability": {
+          "type": "number",
+          "format": "double"
+        },
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "type": {
+          "$ref": "#/definitions/MessageType"
+        }
+      }
+    },
+    "Stat": {
+      "type": "string",
+      "enum": [
+        "AVG_PKT_SIZE",
+        "PERF",
+        "R_ACK",
+        "R_ARP",
+        "R_DST_SRC",
+        "R_DST_SRC_PORT",
+        "R_ICMP",
+        "R_IP",
+        "R_SYN",
+        "TRAFFIC"
+      ]
+    },
+    "AlertStatus": {
+      "type": "string",
+      "enum": [
+        "DOWN_ALERT",
+        "UP_ALERT"
+      ]
+    },
+    "MessageType": {
+      "type": "string",
+      "enum": [
+        "alarm",
+        "data"
+      ]
+    }
+  }
+}

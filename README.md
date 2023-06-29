@@ -30,3 +30,6 @@ SIFIS-Home schema for RISE WP3 solutions: Format for log message from ACE Author
 
 SIFIS-Home schema for RISE WP3 solutions: Used for a Client relaying back responses from its associated Server(s)
 
+## WP4 Edge IDS
+
+SIFIS-Home schema for when Netspot Control server is started with optional `--dht` argument.
