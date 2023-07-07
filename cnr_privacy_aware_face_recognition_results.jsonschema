@@ -1,0 +1,70 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "SIFIS:Privacy_Aware_Face_Recognition_Results",
+  "description": "Sending face recognition analytic results",
+  "type": "object",
+  "properties": {
+    "RequestPostTopicUUID": {
+      "type": "object",
+      "properties": {
+        "topic_name": {
+          "type": "string"
+        },
+        "topic_uuid": {
+          "type": "string"
+        },
+        "value": {
+          "type": "object",
+          "properties": {
+            "description": {
+              "type": "string"
+            },
+            "Type": {
+              "type": "string"
+            },
+            "file_name": {
+              "type": "string"
+            },
+            "Privacy_Parameter": {
+              "type": "integer"
+            },
+            "Labels": {
+              "type": "object",
+              "properties": {
+                "frame_id": {
+                  "type": "integer"
+                },
+                "label": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "frame_id",
+                "label"
+              ]
+            },
+            "count_frames": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "description",
+            "Type",
+            "file_name",
+            "Privacy_Parameter",
+            "Labels",
+            "count_frames"
+          ]
+        }
+      },
+      "required": [
+        "topic_name",
+        "topic_uuid",
+        "value"
+      ]
+    }
+  },
+  "required": [
+    "RequestPostTopicUUID"
+  ]
+}
