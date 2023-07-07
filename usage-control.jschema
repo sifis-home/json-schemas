@@ -1,0 +1,468 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://raw.githubusercontent.com/sifis-home/json-schemas/master/usage-control.jschema",
+  "title": "SIFIS-Home PEP requests schema",
+  "type": "object",
+  "required": [
+    "RequestPubMessage"
+  ],
+  "properties": {
+    "RequestPubMessage": {
+      "type": "object",
+      "required": [
+        "value"
+      ],
+      "properties": {
+        "value": {
+          "type": "object",
+          "required": [
+            "timestamp",
+            "command"
+          ],
+          "properties": {
+            "timestamp": {
+              "type": "integer",
+              "examples": [
+                1688652480878
+              ]
+            },
+            "command": {
+              "type": "object",
+              "required": [
+                "command_type",
+                "value"
+              ],
+              "properties": {
+                "command_type": {
+                  "type": "string"
+                },
+                "value": {
+                  "type": "object",
+                  "required": [
+                    "message",
+                    "id",
+                    "topic_name",
+                    "topic_uuid"
+                  ],
+                  "properties": {
+                    "message": {
+                      "type": "object",
+                      "oneOf": [
+                        {"$ref": "#/definitions/register"},
+                        {"$ref": "#/definitions/register_response"},
+                        {"$ref": "#/definitions/try"},
+                        {"$ref": "#/definitions/try_response"},
+                        {"$ref": "#/definitions/start"},
+                        {"$ref": "#/definitions/start_response"},
+                        {"$ref": "#/definitions/end"},
+                        {"$ref": "#/definitions/end_response"},
+                        {"$ref": "#/definitions/reevaluation_response"},
+                        {"$ref": "#/definitions/add_policy"},
+                        {"$ref": "#/definitions/add_policy_response"},
+                        {"$ref": "#/definitions/delete_policy"},
+                        {"$ref": "#/definitions/delete_policy_response"},
+                        {"$ref": "#/definitions/get_policy"},
+                        {"$ref": "#/definitions/get_policy_response"},
+                        {"$ref": "#/definitions/list_policies"},
+                        {"$ref": "#/definitions/list_policies_response"}
+                      ]
+                    },
+                    "id": {
+                      "type": "string",
+                      "examples": [
+                        "pep-id"
+                      ]
+                    },
+                    "topic_name": {
+                      "type": "string",
+                      "examples": [
+                        "topic-name"
+                      ]
+                    },
+                    "topic_uuid": {
+                      "type": "string",
+                      "examples": [
+                        "topic-uuid-the-ucs-is-subscribed-to"
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "register": {
+      "type": "object",
+      "required": [
+        "purpose",
+        "message_id",
+        "sub_topic_name",
+        "sub_topic_uuid"
+      ],
+      "properties": {
+        "purpose": {
+          "type": "string",
+          "const": "REGISTER"
+        },
+        "message_id": {
+          "type": "string",
+          "examples": ["84392998-1c06-11ee-9a7c-acde48001122"]
+        },
+        "sub_topic_name": {
+          "type": "string",
+          "examples": ["topic-name-the-pep-is-subscribed-to"]
+        },
+        "sub_topic_uuid": {
+          "type": "string",
+          "examples": ["topic-uuid-the-pep-is-subscribed-to"]
+        }
+      }
+    },
+    "register_response": {
+      "required": [
+        "purpose",
+        "message_id",
+        "code"
+      ],
+      "properties": {
+        "purpose": {
+          "type": "string",
+          "const":"REGISTER_RESPONSE"
+        },
+        "message_id": {
+          "type": "string",
+          "examples": ["3d0ee6bb-6ec7-403c-aaa1-c27d3e8795a1"]
+        },
+        "code": {
+          "type": "string",
+          "enum" : ["OK", "KO"]
+        }
+      }
+    },
+    "try": {
+      "required": [
+        "purpose",
+        "message_id",
+        "request",
+        "policy"
+      ],
+      "properties": {
+        "purpose": {
+          "type": "string",
+          "const": "TRY"
+        },
+        "message_id": {
+          "type": "string"
+        },
+        "request": {
+          "title": "Request",
+          "type": "string",
+          "pattern": "^[A-Za-z0-9+/=]+$"
+        },
+        "policy": {
+          "anyOf": [
+            {"type": "string", "pattern": "^[A-Za-z0-9+/=]+$"},
+            {"type": "null"}
+          ]
+        }
+      }
+    },
+    "try_response": {
+      "required": [
+        "purpose",
+        "message_id",
+        "evaluation",
+        "session_id"
+      ],
+      "properties": {
+        "purpose": {
+          "type": "string",
+          "const": "TRY_RESPONSE"
+        },
+        "message_id": {
+          "type": "string"
+        },
+        "evaluation": {
+          "type": "string",
+          "enum": ["Permit", "Deny", "NotApplicable", "Indeterminate"]
+        },
+        "session_id": {
+          "type": "string",
+          "examples": ["ac60debb-1fc2-4384-9daa-e3226636925a"]
+        }
+      }
+    },
+    "start": {
+      "required": [
+        "purpose",
+        "message_id",
+        "session_id"
+      ],
+      "properties": {
+        "purpose": {
+          "type": "string",
+          "const": "START"
+        },
+        "message_id": {
+          "type": "string"
+        },
+        "session_id": {
+          "type": "string"
+        }
+      }
+    },
+    "start_response": {
+      "required": [
+        "purpose",
+        "message_id",
+        "evaluation"
+      ],
+      "properties": {
+        "purpose": {
+          "type": "string",
+          "const": "START_RESPONSE"
+        },
+        "message_id": {
+          "type": "string"
+        },
+        "evaluation": {
+          "type": "string",
+          "enum": ["Permit", "Deny", "NotApplicable", "Indeterminate"]
+        }
+      }
+    },
+    "end": {
+      "required": [
+        "purpose",
+        "message_id",
+        "session_id"
+      ],
+      "properties": {
+        "purpose": {
+          "type": "string",
+          "const": "END"
+        },
+        "message_id": {
+          "type": "string"
+        },
+        "session_id": {
+          "type": "string"
+        }
+      }
+    },
+    "end_response": {
+      "required": [
+        "purpose",
+        "message_id",
+        "evaluation"
+      ],
+      "properties": {
+        "purpose": {
+          "type": "string",
+          "const": "END_RESPONSE"
+        },
+        "message_id": {
+          "type": "string"
+        },
+        "evaluation": {
+          "type": "string",
+          "enum": ["Permit", "Deny", "NotApplicable", "Indeterminate"]
+        }
+      }
+    },
+    "reevaluation_response" :{
+      "required": [
+        "purpose",
+        "message_id",
+        "evaluation",
+        "session_id"
+      ],
+      "properties": {
+        "purpose": {
+          "type": "string",
+          "const": "REEVALUATION_RESPONSE"
+        },
+        "message_id": {
+          "type": "string"
+        },
+        "evaluation": {
+          "type": "string",
+          "enum": ["Permit", "Deny"]
+        },
+        "session_id": {
+          "type": "string"
+        }
+      }
+    },
+    "add_policy": {
+      "required": [
+        "purpose",
+        "message_id",
+        "policy",
+        "policy_id"
+      ],
+      "properties": {
+        "purpose": {
+          "type": "string",
+          "const": "ADD_POLICY"
+        },
+        "message_id": {
+          "type": "string"
+        },
+        "policy": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9+/=]+$"
+        },
+        "policy_id": {
+          "type": "string"
+        }
+      }
+    },
+    "add_policy_response": {
+      "required": [
+        "purpose",
+        "message_id",
+        "code"
+      ],
+      "properties": {
+        "purpose": {
+          "type": "string",
+          "const": "ADD_POLICY_RESPONSE"
+        },
+        "message_id": {
+          "type": "string"
+        },
+        "code": {
+          "type": "string",
+          "enum": ["OK", "KO"]
+        }
+      }
+    },
+    "delete_policy": {
+      "required": [
+        "purpose",
+        "message_id",
+        "policy",
+        "policy_id"
+      ],
+      "properties": {
+        "purpose": {
+          "type": "string",
+          "const": "DELETE_POLICY"
+        },
+        "message_id": {
+          "type": "string"
+        },
+        "policy": {
+          "anyOf": [
+            {"type": "string", "pattern": "^[A-Za-z0-9+/=]+$"},
+            {"type": "null"}
+          ]
+        },
+        "policy_id": {
+          "type": "string"
+        }
+      }
+    },
+    "delete_policy_response": {
+      "required": [
+        "purpose",
+        "message_id",
+        "code"
+      ],
+      "properties": {
+        "purpose": {
+          "type": "string",
+          "const": "DELETE_POLICY_RESPONSE"
+        },
+        "message_id": {
+          "type": "string"
+        },
+        "code": {
+          "type": "string",
+          "enum": ["OK", "KO"]
+        }
+      }
+    },
+    "get_policy": {
+      "required": [
+        "purpose",
+        "message_id",
+        "policy_id"
+      ],
+      "properties": {
+        "purpose": {
+          "default": "",
+          "const": "GET_POLICY"
+        },
+        "message_id": {
+          "type": "string"
+        },
+        "policy_id": {
+          "type": "string"
+        }
+      }
+    },
+    "get_policy_response": {
+      "required": [
+        "purpose",
+        "message_id",
+        "policy"
+      ],
+      "properties": {
+        "purpose": {
+          "type": "string",
+          "const": "GET_POLICY_RESPONSE"
+        },
+        "message_id": {
+          "type": "string"
+        },
+        "policy": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9+/=]+$"
+        }
+      }
+    },
+    "list_policies":{
+      "required": [
+        "purpose",
+        "message_id"
+      ],
+      "properties": {
+        "purpose": {
+          "type": "string",
+          "const": "LIST_POLICIES"
+        },
+        "message_id": {
+          "type": "string"
+        }
+      }
+    },
+    "list_policies_response": {
+      "required": [
+        "purpose",
+        "message_id",
+        "policies"
+      ],
+      "properties": {
+        "purpose": {
+          "type": "string",
+          "const": "LIST_POLICIES_RESPONSE"
+        },
+        "message_id": {
+          "type": "string"
+        },
+        "policies": {
+          "type": "array",
+          "items":{
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

@@ -42,3 +42,5 @@ jobs:
       - name: Validate WP3 Response Data schema
         run: check-jsonschema -v --schemafile wp3-response-data.jschema ./data/wp3-response-data-instance1.json ./data/wp3-response-data-instance2.json ./data/wp3-response-data-instance3.json
 
+      - name: Validate usage control messages schema
+        run: check-jsonschema -v --schemafile usage-control.jschema ./data/usage-control/*
