@@ -1,0 +1,86 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "SIFIS:Privacy_Aware_Audio_Anomaly_Detection_Results",
+  "description": "Sending audio anomaly detection analytic results",
+  "type": "object",
+  "properties": {
+    "RequestPostTopicUUID": {
+      "type": "object",
+      "properties": {
+        "topic_name": {
+          "type": "string"
+        },
+        "topic_uuid": {
+          "type": "string"
+        },
+        "value": {
+          "type": "object",
+          "properties": {
+            "description": {
+              "type": "string"
+            },
+            "requestor_id": {
+              "type": "string"
+            },
+            "requestor_type": {
+              "type": "string"
+            },
+            "request_id": {
+              "type": "string"
+            },
+            "analyzer_id": {
+              "type": "string"
+            },
+            "analysis_id": {
+              "type": "string"
+            },
+            "audio_file": {
+              "type": "string"
+            },
+            "method": {
+              "type": "string"
+            },
+            "predictions": {
+              "type": "object",
+              "properties": {
+                "label_id": {
+                  "type": "integer"
+                },
+                "label": {
+                  "type": "string"
+                },
+                "probability": {
+                  "type": "number"
+                }
+              },
+              "required": [
+                "label_id",
+                "label",
+                "probability"
+              ]
+            }
+          },
+          "required": [
+            "description",
+            "requestor_id",
+            "requestor_type",
+            "request_id",
+            "analyzer_id",
+            "analysis_id",
+            "audio_file",
+            "method",
+            "predictions"
+          ]
+        }
+      },
+      "required": [
+        "topic_name",
+        "topic_uuid",
+        "value"
+      ]
+    }
+  },
+  "required": [
+    "RequestPostTopicUUID"
+  ]
+}
