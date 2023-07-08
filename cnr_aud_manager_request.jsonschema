@@ -1,0 +1,46 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "SIFIS:AUD_Manager_Request",
+  "description": "Sending AUD manager request",
+  "type": "object",
+  "properties": {
+    "RequestPostTopicUUID": {
+      "type": "object",
+      "properties": {
+        "topic_name": {
+          "type": "string"
+        },
+        "topic_uuid": {
+          "type": "string"
+        },
+        "value": {
+          "type": "object",
+          "properties": {
+            "Dev_uuid": {
+              "type": "string"
+            },
+            "description": {
+              "type": "string"
+            },
+            "Request": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "Dev_uuid",
+            "description",
+            "Request"
+          ]
+        }
+      },
+      "required": [
+        "topic_name",
+        "topic_uuid",
+        "value"
+      ]
+    }
+  },
+  "required": [
+    "RequestPostTopicUUID"
+  ]
+}
