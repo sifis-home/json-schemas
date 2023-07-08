@@ -1,0 +1,70 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "SIFIS:Privacy_Aware_Object_Recognition",
+  "description": "Sending object recognition request",
+  "type": "object",
+  "properties": {
+    "RequestPostTopicUUID": {
+      "type": "object",
+      "properties": {
+        "topic_name": {
+          "type": "string"
+        },
+        "topic_uuid": {
+          "type": "string"
+        },
+        "value": {
+          "type": "object",
+          "properties": {
+            "description": {
+              "type": "string"
+            },
+            "requestor_id": {
+              "type": "string"
+            },
+            "requestor_type": {
+              "type": "string"
+            },
+            "request_id": {
+              "type": "string"
+            },
+            "Type": {
+              "type": "string"
+            },
+            "file_name": {
+              "type": "string"
+            },
+            "file_path": {
+              "type": "string"
+            },
+            "epsilon": {
+              "type": "number"
+            },
+            "sensitivity": {
+              "type": "number"
+            }
+          },
+          "required": [
+            "description",
+            "requestor_id",
+            "requestor_type",
+            "request_id",
+            "Type",
+            "file_name",
+            "file_path",
+            "epsilon",
+            "sensitivity"
+          ]
+        }
+      },
+      "required": [
+        "topic_name",
+        "topic_uuid",
+        "value"
+      ]
+    }
+  },
+  "required": [
+    "RequestPostTopicUUID"
+  ]
+}
