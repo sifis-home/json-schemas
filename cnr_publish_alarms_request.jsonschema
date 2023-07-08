@@ -1,0 +1,58 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "SIFIS:Publish_Alarms_Request",
+  "description": "Sending alarms request",
+  "type": "object",
+  "properties": {
+    "RequestPostTopicUUID": {
+      "type": "object",
+      "properties": {
+        "topic_name": {
+          "type": "string"
+        },
+        "topic_uuid": {
+          "type": "string"
+        },
+        "value": {
+          "type": "object",
+          "properties": {
+            "Dev_uuid": {
+              "type": "string"
+            },
+            "description": {
+              "type": "string"
+            },
+            "Address": {
+              "type": "string"
+            },
+            "Port": {
+              "type": "string"
+            },
+            "Within Time": {
+              "type": "string"
+            },
+            "Device name": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "Dev_uuid",
+            "description",
+            "Address",
+            "Port",
+            "Within Time",
+            "Device name"
+          ]
+        }
+      },
+      "required": [
+        "topic_name",
+        "topic_uuid",
+        "value"
+      ]
+    }
+  },
+  "required": [
+    "RequestPostTopicUUID"
+  ]
+}
