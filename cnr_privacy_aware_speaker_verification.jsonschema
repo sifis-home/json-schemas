@@ -1,0 +1,62 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "SIFIS:Privacy_Aware_Speaker_Verification",
+  "description": "Sending speaker verification request",
+  "type": "object",
+  "properties": {
+    "RequestPostTopicUUID": {
+      "type": "object",
+      "properties": {
+        "topic_name": {
+          "type": "string"
+        },
+        "topic_uuid": {
+          "type": "string"
+        },
+        "value": {
+          "type": "object",
+          "properties": {
+            "description": {
+              "type": "string"
+            },
+            "requestor_id": {
+              "type": "string"
+            },
+            "requestor_type": {
+              "type": "string"
+            },
+            "request_id": {
+              "type": "string"
+            },
+            "Type": {
+              "type": "string"
+            },
+            "first_audio_file": {
+              "type": "string"
+            },
+            "second_audio_file": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "description",
+            "requestor_id",
+            "requestor_type",
+            "request_id",
+            "Type",
+            "first_audio_file",
+            "second_audio_file"
+          ]
+        }
+      },
+      "required": [
+        "topic_name",
+        "topic_uuid",
+        "value"
+      ]
+    }
+  },
+  "required": [
+    "RequestPostTopicUUID"
+  ]
+}
