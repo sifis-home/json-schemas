@@ -22,9 +22,7 @@
           "properties": {
             "timestamp": {
               "type": "integer",
-              "examples": [
-                1688652480878
-              ]
+              "examples": [1688652480878]
             },
             "command": {
               "type": "object",
@@ -64,26 +62,22 @@
                         {"$ref": "#/definitions/get_policy"},
                         {"$ref": "#/definitions/get_policy_response"},
                         {"$ref": "#/definitions/list_policies"},
-                        {"$ref": "#/definitions/list_policies_response"}
+                        {"$ref": "#/definitions/list_policies_response"},
+                        {"$ref": "#/definitions/add_pip"},
+                        {"$ref": "#/definitions/add_pip_response"}
                       ]
                     },
                     "id": {
                       "type": "string",
-                      "examples": [
-                        "pep-id"
-                      ]
+                      "examples": ["pep-id"]
                     },
                     "topic_name": {
                       "type": "string",
-                      "examples": [
-                        "topic-name"
-                      ]
+                      "examples": ["topic-name"]
                     },
                     "topic_uuid": {
                       "type": "string",
-                      "examples": [
-                        "topic-uuid-the-ucs-is-subscribed-to"
-                      ]
+                      "examples": ["topic-uuid-the-ucs-is-subscribed-to"]
                     }
                   }
                 }
@@ -461,6 +455,78 @@
           "items":{
             "type": "string"
           }
+        }
+      }
+    },
+    "add_pip": {
+      "required": [
+        "purpose",
+        "message_id",
+        "pip_type",
+        "attribute_id",
+        "category",
+        "data_type",
+        "attribute_value",
+        "file_name",
+        "refresh_rate"
+      ],
+      "properties": {
+        "purpose": {
+          "type": "string",
+          "const": "ADD_PIP"
+        },
+        "message_id": {
+          "type": "string"
+        },
+        "pip_type": {
+          "type": "string",
+          "enum": ["PIPReader"]
+        },
+        "attribute_id": {
+          "type": "string",
+          "examples": ["eu.sifis-home:1.0:environment:all-windows-in-bedroom-closed"]
+        },
+        "category": {
+          "type": "string",
+          "examples": ["urn:oasis:names:tc:xacml:3.0:attribute-category:environment"]
+        },
+        "data_type": {
+          "type": "string",
+          "examples": ["http://www.w3.org/2001/XMLSchema#string"]
+        },
+        "attribute_value": {
+          "type": "string",
+          "examples": ["true"]
+        },
+        "file_name": {
+          "type": "string",
+          "examples": ["windows-in-bedroom.txt"]
+        },
+        "refresh_rate": {
+          "type": "integer",
+          "description": "Time interval in milliseconds between two polling requests to the AM, when the PIP is subscribed",
+          "examples": [1000]
+        }
+      }
+    },
+    "add_pip_response": {
+      "required": [
+        "purpose",
+        "message_id",
+        "code"
+      ],
+      "properties": {
+        "purpose": {
+          "type": "string",
+          "const": "ADD_PIP_RESPONSE"
+        },
+        "message_id": {
+          "type": "string"
+
+        },
+        "code": {
+          "type": "string",
+          "enum": ["OK", "KO"]
         }
       }
     }
