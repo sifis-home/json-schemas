@@ -466,8 +466,6 @@
         "attribute_id",
         "category",
         "data_type",
-        "attribute_value",
-        "file_name",
         "refresh_rate"
       ],
       "properties": {
@@ -480,7 +478,11 @@
         },
         "pip_type": {
           "type": "string",
-          "enum": ["PIPReader"]
+          "enum": [
+            "it.cnr.iit.ucs.pipreader.PIPReader",
+            "it.cnr.iit.ucs.piptime.PIPTime",
+            "it.cnr.iit.ucs.pipwebsocket.PIPWebSocketLamps"
+          ]
         },
         "attribute_id": {
           "type": "string",
@@ -494,18 +496,17 @@
           "type": "string",
           "examples": ["http://www.w3.org/2001/XMLSchema#string"]
         },
-        "attribute_value": {
-          "type": "string",
-          "examples": ["true"]
-        },
-        "file_name": {
-          "type": "string",
-          "examples": ["windows-in-bedroom.txt"]
-        },
         "refresh_rate": {
           "type": "integer",
           "description": "Time interval in milliseconds between two polling requests to the AM, when the PIP is subscribed",
           "examples": [1000]
+        },
+        "additional_properties": {
+          "type": "object",
+          "description": "This field can have any number of properties, all of which must have values of type string. However, none of these properties are required",
+          "additionalProperties": {
+            "type": "string"
+          }
         }
       }
     },
