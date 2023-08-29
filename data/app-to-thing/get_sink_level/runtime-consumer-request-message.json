@@ -1,0 +1,7 @@
+{
+  "message_type": "request_message",
+  "request_id": "9901e9ad-0d45-45f4-9e3f-efca67188f9c",
+  "thing_id": "fc7b09be-d160-4dc4-a422-4f2dbee41726",
+  "method": "GET",
+  "path": "/properties/level"
+}

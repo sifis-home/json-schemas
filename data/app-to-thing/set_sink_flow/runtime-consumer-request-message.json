@@ -1,0 +1,14 @@
+{
+  "message_type": "request_message",
+  "request_id": "d0cd5936-e55b-471c-ab1c-9116a3016975",
+  "thing_id": "fc7b09be-d160-4dc4-a422-4f2dbee41726",
+  "method": "PUT",
+  "path": "/properties/flow",
+  "headers": [
+    [
+      "content-type",
+      "application/json"
+    ]
+  ],
+  "body": "40"
+}

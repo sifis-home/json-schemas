@@ -1,0 +1,26 @@
+{
+  "type": "object",
+  "properties": {
+    "message_type": {
+      "const": "response_message"
+    },
+    "request_id": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "body": {
+      "type": [
+        "null",
+        "boolean",
+        "object",
+        "array",
+        "number",
+        "string"
+      ]
+    }
+  },
+  "required": [
+    "message_type",
+    "request_id"
+  ]
+}

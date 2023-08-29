@@ -1,0 +1,14 @@
+{
+  "message_type": "request_message",
+  "request_id": "0cf8a86e-2107-4a8e-b3f1-427c2568efcd",
+  "thing_id": "fc7b09be-d160-4dc4-a422-4f2dbee41726",
+  "method": "PUT",
+  "path": "/properties/drain",
+  "headers": [
+    [
+      "content-type",
+      "application/json"
+    ]
+  ],
+  "body": "true"
+}

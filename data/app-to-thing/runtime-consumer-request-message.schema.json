@@ -1,0 +1,109 @@
+{
+  "type": "object",
+  "properties": {
+    "message_type": {
+      "const": "request_message"
+    },
+    "request_id": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "thing_id": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "method": {
+      "type": "string",
+      "description": "The HTTP method"
+    },
+    "path": {
+      "type": "string"
+    },
+    "authorization": {
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "basic": {
+              "type": "object",
+              "properties": {
+                "username": {
+                  "type": "string"
+                },
+                "password": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "username",
+                "password"
+              ]
+            }
+          },
+          "required": [
+            "basic"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "bearer": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "bearer"
+          ]
+        }
+      ]
+    },
+    "headers": {
+      "type": "array",
+      "items": {
+        "type": "array",
+        "prefixItems": [
+          {
+            "type": "string"
+          },
+          {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 255
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "body": {
+      "oneOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 255
+          }
+        }
+      ]
+    }
+  },
+  "required": [
+    "message_type",
+    "request_id",
+    "thing_id",
+    "method",
+    "path"
+  ]
+}
