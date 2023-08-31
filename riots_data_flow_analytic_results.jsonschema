@@ -1,0 +1,58 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "SIFIS:Data_Flow_Analytic",
+  "description": "Data Flow Analytic status",
+  "type": "object",
+  "properties": {
+    "RequestPostTopicUUID": {
+      "type": "object",
+      "properties": {
+        "topic_name": {
+          "type": "string"
+        },
+        "topic_uuid": {
+          "type": "string"
+        },
+        "value": {
+          "type": "object",
+          "properties": {
+            "description": {
+              "type": "string"
+            },
+            "client_id": {
+              "type": "string"
+            },
+            "client_ip": {
+              "type": "string"
+            },
+            "client_port": {
+              "type": "string"
+            },
+            "message": {
+              "type": "string"
+            },
+            "status": {
+              "type": "string"
+            },
+          },
+          "required": [
+            "description",
+            "client_id",
+            "client_ip",
+            "client_port",
+            "message",
+            "status"
+          ]
+        }
+      },
+      "required": [
+        "topic_name",
+        "topic_uuid",
+        "value"
+      ]
+    }
+  },
+  "required": [
+    "RequestPostTopicUUID"
+  ]
+}
