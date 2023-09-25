@@ -1,0 +1,14 @@
+{
+  "message_type": "request_message",
+  "request_id": "5842cfa3-1dd7-4d8b-9d25-2200a5459f45",
+  "thing_id": "fc7b09be-d160-4dc4-a422-4f2dbee41726",
+  "method": "PUT",
+  "path": "/properties/temperature",
+  "headers": [
+    [
+      "content-type",
+      "application/json"
+    ]
+  ],
+  "body": "40"
+}

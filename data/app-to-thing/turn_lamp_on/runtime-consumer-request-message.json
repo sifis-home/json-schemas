@@ -1,0 +1,14 @@
+{
+  "message_type": "request_message",
+  "request_id": "0839e7a4-f0e3-414d-82c6-7676aeaee135",
+  "thing_id": "fee5618d-14ea-49b0-b936-1491588c04a9",
+  "method": "PUT",
+  "path": "/properties/on",
+  "headers": [
+    [
+      "content-type",
+      "application/json"
+    ]
+  ],
+  "body": "true"
+}

@@ -1,0 +1,7 @@
+{
+  "message_type": "request_message",
+  "request_id": "cac25f16-a387-4e80-97af-bc1274173c6a",
+  "thing_id": "fc7b09be-d160-4dc4-a422-4f2dbee41726",
+  "method": "GET",
+  "path": "/properties/temperature"
+}

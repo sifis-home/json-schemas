@@ -1,0 +1,7 @@
+{
+  "message_type": "request_message",
+  "request_id": "bd1c2afd-533e-4460-99d3-fbfba349a187",
+  "thing_id": "af9d2860-8180-409f-b431-bb60fd9c5d79",
+  "method": "GET",
+  "path": ".well-known/wot"
+}
