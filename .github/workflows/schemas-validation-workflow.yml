@@ -28,7 +28,7 @@ jobs:
         run: pip install check-jsonschema
         
       - name: Validate API Label schema
-        run: check-jsonschema -v --schemafile api-label.jschema ./data/api-label-instance.json
+        run: check-jsonschema -v --schemafile api-label.jschema ./data/api-label-instance.json ./data/api-label-instance2.json
         
       - name: Validate App Label schema
         run: check-jsonschema -v --schemafile app-label.jschema ./data/app-label-instance.json
