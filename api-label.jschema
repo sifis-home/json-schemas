@@ -24,19 +24,22 @@
           "type": "array",
           "items": {
             "$ref": "#/definitions/hazard"
-          }
+          },
+          "minItems": 0
         },
         "privacy": {
           "type": "array",
           "items": {
             "$ref": "#/definitions/hazard"
-          }
+          },
+          "minItems": 0
         },
         "financial": {
           "type": "array",
           "items": {
             "$ref": "#/definitions/hazard"
-          }
+          },
+          "minItems": 0
         }
       },
       "required": [
